@@ -305,6 +305,7 @@ PRODUCT_PACKAGES += \
 	init.battery.rc \
 	init.power.rc \
 	init.samsung.rc \
+	init.recovery.samsungexynos7420.rc \
 	init.samsungexynos7420.rc \
 	init.samsungexynos7420.usb.rc \
 	init.wifi.rc \
