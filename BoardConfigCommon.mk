@@ -121,6 +121,9 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 # Compatibility Matrix
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
 
+# LMKD stats logging
+TARGET_LMKD_STATS_LOG := true
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 29360128
