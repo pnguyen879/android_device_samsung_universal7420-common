@@ -100,6 +100,7 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+BOARD_RAMDISK_USE_XZ := true
 
 # Mediaserver-shim
 TARGET_LD_SHIM_LIBS += \
