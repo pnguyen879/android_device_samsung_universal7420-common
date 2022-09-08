@@ -99,6 +99,7 @@ BOARD_RAMDISK_USE_XZ := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 TARGET_KERNEL_CLANG_COMPILE := false
 BOARD_USES_FULL_RECOVERY_IMAGE := false
+TARGET_KERNEL_LLVM_BINUTILS := false
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
     
