@@ -245,7 +245,6 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-	android.hardware.media.omx@1.0-impl \
 	android.hardware.media.omx@1.0-service
 
 # Permissions
@@ -409,12 +408,9 @@ PRODUCT_PACKAGES += \
 	macloader \
 	wificond \
 	wifiloader \
-	wifilogd \
-	wlutil \
 	TetheringConfigOverlay \
 	wpa_supplicant \
 	wpa_supplicant.conf \
-	android.hardware.wifi@1.0-impl \
 	android.hardware.wifi@1.0-service.legacy
 
 PRODUCT_COPY_FILES += \
