@@ -236,7 +236,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libnfc-nci \
 	libnfc_nci_jni \
-	NfcNci \
 	Tag \
 	com.android.nfc_extras \
 	android.hardware.nfc@1.2-service.exynos7420
