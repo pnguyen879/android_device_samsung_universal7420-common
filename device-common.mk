@@ -148,6 +148,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libexynoscamera_shim
 
+# Charger
+PRODUCT_PACKAGES += \
+	libsuspend
+
 # Debugging
 -include $(COMMON_PATH)/system_prop_debug.mk
 
