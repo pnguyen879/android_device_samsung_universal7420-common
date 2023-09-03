@@ -20,7 +20,7 @@ COMMON_PATH := device/samsung/universal7420-common
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    device/samsung/universal7420-common/overlay/hardware/samsung/AdvancedDisplay    
+	device/samsung/universal7420-common/overlay/hardware/samsung/AdvancedDisplay    
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -122,26 +122,17 @@ TARGET_SCREEN_WIDTH := 1440
 
 # BSP
 PRODUCT_PACKAGES += \
-	memtrack.exynos5 \
-	gralloc.exynos5 \
-	hwcomposer.exynos5 \
+	memtrack.universal7420 \
+	gralloc.exynos7420 \
+	hwcomposer.universal7420 \
+	libcsc \
 	libfimg \
+	libexynosscaler \
+	libexynosgscaler \
 	libhwc2on1adapter \
 	libhwc2onfbadapter \
 	libion \
-	libion_exynos \
-	libstagefrighthw \
-	libExynosOMX_Core \
-	libExynosOMX_Resourcemanager \
-	libOMX.Exynos.MPEG4.Encoder \
-	libOMX.Exynos.MPEG4.Decoder \
-	libOMX.Exynos.AVC.Encoder \
-	libOMX.Exynos.AVC.Decoder \
-	libOMX.Exynos.HEVC.Encoder\
- 	libOMX.Exynos.HEVC.Decoder \
- 	libOMX.Exynos.VP9.Decoder \
- 	libOMX.Exynos.VP8.Decoder \
- 	libOMX.Exynos.VP8.Encoder
+	libion_exynos
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -371,10 +362,6 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant.conf \
 	android.hardware.wifi@1.0-impl \
 	android.hardware.wifi@1.0-service.legacy
-
-# call Samsung LSI board support package
-$(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi/exynos7420/exynos7420.mk)
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/universal7420-common/universal7420-common-vendor.mk)
