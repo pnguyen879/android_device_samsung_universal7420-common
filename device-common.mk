@@ -239,7 +239,7 @@ PRODUCT_PACKAGES += \
 
 # Livedisplay
 PRODUCT_PACKAGES += \
-	vendor.lineage.livedisplay@2.0-service.universal7420
+	vendor.lineage.livedisplay@2.1-service.universal7420
 
 # Memory
 PRODUCT_PACKAGES += \
