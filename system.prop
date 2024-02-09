@@ -42,6 +42,7 @@ ro.nfc.sec_hal=true
 ro.nfc.fw_dl_on_boot=false
 
 # HWC
+ro.zygote.disable_gl_preload=1
 debug.sf.latch_unsignaled=1
 debug.hwc.winupdate=1
 debug.sf.disable_backpressure=1
