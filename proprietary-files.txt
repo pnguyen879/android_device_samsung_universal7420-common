@@ -1,6 +1,8 @@
 # All blobs are from zerofltexx stock (Nougat) unless stated
 
 # Audio
+etc/firmware/audience-es705-fw.bin
+etc/firmware/audience-es804-fw.bin
 etc/firmware/clearwater-dsp3-tx-nb.bin
 etc/firmware/clearwater-dsp3-tx-swb-interview.bin
 etc/firmware/clearwater-dsp3-tx-wb.bin
@@ -59,8 +61,10 @@ vendor/firmware/bcm4358A3_V0083.0138.hcd:vendor/firmware/bcm4358A3_V0083.0138_se
 vendor/firmware/bcm4358A3_V0083.0138.hcd:vendor/firmware/bcm4358A3_V0083.0138_semco3rd.hcd|e3f2205f0afa2d269f1bad80e27806919c3f39f4
 vendor/firmware/bcm4358A3_V0083.0138_wisol.hcd|e3f2205f0afa2d269f1bad80e27806919c3f39f4
 
-# Camera
+# Prebuilt libaudioroute.so to work around https://android.googlesource.com/platform/system/media/+/fbbc93cb34e36b2b28e2e440e9f5e0c4d1472b8d
+lib/libaudioroute.so|46fcafe8de5c4fe078ad9e9e613bc260fd137106
 
+# Camera
 lib/hw/camera.exynos5.so:vendor/lib/hw/camera.exynos5.so
 lib64/hw/camera.exynos5.so:vendor/lib64/hw/camera.exynos5.so
 lib/libexynoscamera.so:vendor/lib/libexynoscamera.so
@@ -95,8 +99,8 @@ vendor/firmware/setfile_imx240.bin
 bin/cbd:vendor/bin/cbd
 
 # Graphics
-vendor/lib/egl/libGLES_mali.so
-vendor/lib64/egl/libGLES_mali.so
+lib/egl/libGLES_mali.so:vendor/lib/egl/libGLES_mali.so
+lib64/egl/libGLES_mali.so:vendor/lib64/egl/libGLES_mali.so
 
 # IR
 lib/hw/consumerir.exynos5.so:vendor/lib/hw/consumerir.exynos5.so
@@ -119,7 +123,7 @@ lib64/libsensorlistener.so:vendor/lib64/libsensorlistener.so
 lib/libwrappergps.so:vendor/lib/libwrappergps.so
 lib64/libwrappergps.so:vendor/lib64/libwrappergps.so
 
-# GPS - Taken from G920FXXU6EVG1 stock firmware to fix GPS rollover bug
+# GPS - Taken from G920FXXU6EVG1 - to fix GPS rollover bug
 bin/gpsd:vendor/bin/gpsd
 bin/lhd:vendor/bin/lhd
 lib64/hw/gps.default.so:vendor/lib64/hw/gps.default.so
@@ -167,3 +171,37 @@ vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/lib/libwvhidl.so
 vendor/lib/mediadrm/libwvdrmengine.so
+
+# LPM - from N975FXXU6ETLL
+bin/lpm|7a1e0b9854b6259e88cc74ab1e7f0c6b3a3827ab
+lib64/libmaet.so|ec9939dbe9576a9ab3c27c0300d82809ab630cc1
+lib64/libsxqk_skia.so|3ff0105b643964f4da14ed18c071a76b5868ae7c
+
+# LPM
+media/battery_error.spi
+media/battery_low.spi
+media/battery_temperature_error.spi
+media/battery_temperature_limit.spi
+media/battery_water_usb.spi
+media/charging_New_Fast.spi
+media/charging_New_Normal.spi
+media/dock_error_usb.spi
+media/incomplete_connect.spi
+media/lcd_density.txt
+media/percentage.spi
+media/safety_timer_usb.spi
+media/slow_charging_usb.spi
+media/temperature_limit_usb.spi
+media/water_protection_usb.spi
+
+# Gatekeeper - from A810FXXS2CTJ2
+lib/hw/gatekeeper.exynos7420.so:vendor/lib/hw/gatekeeper.universal7420.so
+lib64/hw/gatekeeper.exynos7420.so:vendor/lib64/hw/gatekeeper.universal7420.so
+
+# Keymaster - from A810FXXS2CTJ2
+lib64/vendor.samsung.security.skeymaster@3.0.so:vendor/lib64/vendor.samsung.security.skeymaster@3.0.so
+vendor/lib64/libkeymaster_mdfpp.so
+vendor/lib64/libkeymaster_helper.so
+vendor/lib64/libskeymaster.so
+vendor/lib64/hw/keystore.mdfpp.so
+
