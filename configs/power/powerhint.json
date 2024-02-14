@@ -137,6 +137,17 @@
             "HoldFd": true
         },
         {
+            "Name": "IPATemp",
+            "Path": "/sys/power/ipa/control_temp",
+            "Values": [
+                "45",
+                "65",
+                "120"
+            ],
+            "DefaultIndex": 1,
+            "ResetOnInit": true
+        },
+        {
             "Name": "TouchscreenEnable",
             "Path": "/sys/class/sec/tsp/input/enabled",
             "Values": [
@@ -255,6 +266,12 @@
             "Value": "44"
         },
         {
+            "PowerHint": "LAUNCH",
+            "Node": "IPATemp",
+            "Duration": 1000,
+            "Value": "120"
+        },
+        {
             "PowerHint": "CAMERA_LAUNCH",
             "Node": "CPUBigClusterMaxFreq",
             "Duration": 1000,
@@ -369,6 +386,12 @@
             "Value": "544"
         },
         {
+            "PowerHint": "SUSTAINED_PERFORMANCE",
+            "Node": "IPATemp",
+            "Duration": 0,
+            "Value": "65"
+        },
+        {
             "PowerHint": "VR_MODE",
             "Node": "PowerHALMainState",
             "Duration": 0,
@@ -427,6 +450,12 @@
             "Node": "CPULittleClusterMinFreq",
             "Duration": 0,
             "Value": "400000"
+        },
+        {
+            "PowerHint": "LOW_POWER",
+            "Node": "IPATemp",
+            "Duration": 0,
+            "Value": "45"
         },
         {
             "PowerHint": "PROFILE_POWER_SAVE",
