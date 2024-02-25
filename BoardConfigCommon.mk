@@ -141,7 +141,7 @@ TARGET_USES_VND_SECRIL := true
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # Root extra folders
-BOARD_ROOT_EXTRA_FOLDERS += efs
+BOARD_ROOT_EXTRA_FOLDERS += efs cpefs
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # System prop

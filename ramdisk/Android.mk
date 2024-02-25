@@ -1,8 +1,13 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE		:= fstab.samsungexynos7420
+LOCAL_MODULE_STEM 	:= fstab.samsungexynos7420
 LOCAL_MODULE_CLASS	:= ETC
-LOCAL_SRC_FILES		:= etc/fstab.samsungexynos7420
+ifneq ($(filter noblelte nobleltecan nobleltedd nobleltedv nobleltejv nobleltektt nobleltelgt noblelteskt nobleltespr nobleltetmo nobleltextc nobleltezt zenlte zenltecan zenltedd zenltedv zenltejv zenltektt zenltelgt zenlteskt zenltetmo zenltexx zenltezt,$(TARGET_DEVICE)),)
+LOCAL_SRC_FILES		:= etc/fstab.samsungexynos7420.noble
+else
+LOCAL_SRC_FILES		:= etc/fstab.samsungexynos7420.zero
+endif
 LOCAL_MODULE_PATH	:= $(TARGET_OUT_VENDOR_ETC)
 include $(BUILD_PREBUILT)
 
