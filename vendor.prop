@@ -16,17 +16,10 @@ ro.opengles.version=196610
 ro.hardware.keystore=mdfpp
 
 # Ril
-persist.radio.add_power_save=1
-persist.radio.apm_sim_not_pwdn=1
-vendor.rild.libpath=/system/vendor/lib64/libsec-ril.so
-vendor.rild.libpath2=/system/vendor/lib64/libsec-ril-dsds.so
-ro.ril.force_eri_from_xml=true
-ro.ril.gprsclass=10
-ro.ril.hsxpa=1
-ro.ril.telephony.mqanelements=6
-ro.telephony.get_imsi_from_sim=true
-ro.telephony.ril_class=SlteRIL
-telephony.lteOnGsmDevice=1
+ro.debug_level=0x494d
+telephony.lteOnCdmaDevice=0
+vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
 
 # SLSI
 debug.slsi_platform=1

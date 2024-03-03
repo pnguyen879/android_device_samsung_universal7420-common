@@ -306,16 +306,16 @@ PRODUCT_COPY_FILES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-	libxml2 \
-	libprotobuf-cpp-full \
-	libreference-ril \
-	libril \
-	libsecril-client \
-	libsecril-client-sap \
-	android.hardware.radio@1.0 \
+	android.hardware.radio@1.2 \
+	android.hardware.radio@1.3 \
+	android.hardware.radio@1.4 \
+	android.hardware.radio.config@1.0 \
+	android.hardware.radio.config@1.1 \
+	android.hardware.radio.config@1.2 \
 	android.hardware.radio.deprecated@1.0 \
-	modemloader \
-	rild
+	libxml2 \
+	secril_config_svc \
+	libprotobuf-cpp-full 
 
 # Copy stock APN config as lineage one seams to be quite broken and outdated
 PRODUCT_COPY_FILES += \
@@ -356,7 +356,6 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-	libcutils_shim \
 	libstagefright_shim \
 	libexynoscamera_shim \
 	libbauthtzcommon_shim 
@@ -393,7 +392,9 @@ PRODUCT_PACKAGES += \
 # VNDK prebuilts
 PRODUCT_COPY_FILES += \
 	prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite-v29.so \
-	prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so
+	prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
+	prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full-v29.so \
+	prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-full-v29.so
 
 # Vibrator
 PRODUCT_PACKAGES += \
