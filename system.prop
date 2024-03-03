@@ -14,18 +14,10 @@ dalvik.vm.heapmaxfree=8m
 dalvik.vm.dex2oat64.enabled=true
 
 # Ril
-persist.radio.add_power_save=1
-persist.radio.apm_sim_not_pwdn=1
-rild.libpath=/system/vendor/lib64/libsec-ril.so
-rild.libpath2=/system/vendor/lib64/libsec-ril-dsds.so
-telephony.lteOnGsmDevice=1
+ro.debug_level=0x494d
 telephony.lteOnCdmaDevice=0
-ro.telephony.default_network=9
-ro.use_data_netmgrd=false
-persist.data.netmgrd.qos.enable=false
-ro.ril.hsxpa=1
-ro.ril.telephony.mqanelements=6
-ro.ril.gprsclass=10
+vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
 
 # OMX
 debug.stagefright.ccodec=0

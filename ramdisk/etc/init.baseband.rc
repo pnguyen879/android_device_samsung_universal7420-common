@@ -33,7 +33,6 @@ service cpboot-daemon /vendor/bin/cbd -d -t ss333 -b s -m l -P platform/15570000
     class main
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw log shell
-    disabled
 
 on property:persist.sys.cpboot=disable
     stop cpboot-daemon
@@ -48,3 +47,9 @@ on property:ro.debuggable=1
 	write /sys/kernel/debug/tracing/buffer_size_kb 1408
 	write /sys/kernel/debug/tracing/set_event modem_if:mif_log
 	write /sys/kernel/debug/tracing/tracing_on 1
+
+on property:ro.debug_level=0x494d
+	write /d/tracing/buffer_size_kb 1408
+	write /d/tracing/events/modem_if/mif_log/enable 1
+	write /d/tracing/tracing_on 1
+	write /sys/module/modem_utils/parameters/dflags 13

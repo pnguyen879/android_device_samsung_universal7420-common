@@ -124,9 +124,6 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 # Compatibility Matrix
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
 
-# Networking
-TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
-
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 29360128
@@ -143,14 +140,8 @@ include hardware/samsung_slsi-linaro/config/BoardConfig7420.mk
 
 # Radio
 BOARD_MODEM_TYPE := ss333
-BOARD_PROVIDES_LIBRIL := true
-
-# Ril - Shim
-TARGET_LD_SHIM_LIBS += \
-	/vendor/lib/libsec-ril.so|/vendor/lib/libcutils_shim.so \
-	/vendor/lib/libsec-ril-dsds.so|/vendor/lib/libcutils_shim.so \
-	/vendor/lib64/libsec-ril.so|/vendor/lib64/libcutils_shim.so \
-	/vendor/lib64/libsec-ril-dsds.so|/vendor/lib64/libcutils_shim.so
+ENABLE_VENDOR_RIL_SERVICE := true
+TARGET_USES_VND_SECRIL := true
 
 # Root extra folders
 BOARD_ROOT_EXTRA_FOLDERS += efs
