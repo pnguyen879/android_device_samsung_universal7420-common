@@ -47,7 +47,10 @@ on init
     
     # Set HW revision (should be ro.revision on note fe)
     setprop ro.boot.hardware.revision ${ro.boot.hw_rev}
-    
+on post-fs
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864   
+	
 on late-fs
     # Start services for Boot Animation
     start servicemanager
