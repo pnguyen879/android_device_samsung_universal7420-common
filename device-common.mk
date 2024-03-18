@@ -308,6 +308,11 @@ PRODUCT_PACKAGES += \
 	PresencePolling \
 	RcsService
 
+# Filesystem tools for resizing system partitions
+PRODUCT_PACKAGES += \
+	e2fsck_static \
+	resize2fs_static
+
 # RenderScript
 PRODUCT_PACKAGES += \
 	android.hardware.renderscript@1.0-impl
