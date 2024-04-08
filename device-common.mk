@@ -117,9 +117,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libsuspend
 
-# Debugging
-# -include $(COMMON_PATH)/system_prop_debug.mk
-
 # ConfigStore
 PRODUCT_PACKAGES += \
 	disable_configstore
@@ -193,13 +190,13 @@ PRODUCT_PACKAGES += \
 	
 # Keylayouts
 PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/configs/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-	$(COMMON_PATH)/configs/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
-	$(COMMON_PATH)/configs/keylayout/sec_e-pen.kl:system/usr/keylayout/sec_e-pen.kl \
-	$(COMMON_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc \
-	$(COMMON_PATH)/configs/idc/ft5x06_ts.idc:system/usr/idc/ft5x06_ts.idc \
-	$(COMMON_PATH)/configs/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
-	$(COMMON_PATH)/configs/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
+	$(COMMON_PATH)/configs/keylayout/sec_touchkey.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_touchkey.kl \
+	$(COMMON_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_touchscreen.kl \
+	$(COMMON_PATH)/configs/keylayout/sec_e-pen.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_e-pen.kl \
+	$(COMMON_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/Synaptics_HID_TouchPad.idc \
+	$(COMMON_PATH)/configs/idc/ft5x06_ts.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/ft5x06_ts.idc \
+	$(COMMON_PATH)/configs/idc/sec_e-pen.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/sec_e-pen.idc \
+	$(COMMON_PATH)/configs/idc/sec_touchscreen.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/sec_touchscreen.idc
 	
 # Lights
 PRODUCT_PACKAGES += \
