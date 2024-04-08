@@ -95,6 +95,7 @@ vendor/firmware/fimc_is_fw2_imx240.bin
 vendor/firmware/mfc_fw.bin
 vendor/firmware/ois_fw_dom.bin
 vendor/firmware/ois_fw_sec.bin
+vendor/firmware/ois_fw_sec_2.bin
 vendor/firmware/seiren_fw_dram.bin
 vendor/firmware/seiren_fw_sram.bin
 vendor/firmware/setfile_2p2.bin
