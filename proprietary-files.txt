@@ -82,26 +82,12 @@ lib64/libexynoscamera.so:vendor/lib64/libexynoscamera.so|2310086588abe54e984841f
 lib/libexynoscamera3.so:vendor/lib/libexynoscamera3.so|aaebd317db7784573635c01f9c2fb9a5b357571d
 lib64/libexynoscamera3.so:vendor/lib64/libexynoscamera3.so|1ad609a8e831bf900eaff919c75a41a41e79ee18
 
-# Firmware
-vendor/firmware/companion_2p2_master_setfile.bin
-vendor/firmware/companion_2p2_mode_setfile.bin
-vendor/firmware/companion_fw_2p2_evt1.bin
-vendor/firmware/companion_fw_imx240_evt1.bin
-vendor/firmware/companion_imx240_master_setfile.bin
-vendor/firmware/companion_imx240_mode_setfile.bin
-vendor/firmware/fimc_is_fw2.bin
-vendor/firmware/fimc_is_fw2_2p2.bin
-vendor/firmware/fimc_is_fw2_imx240.bin
-vendor/firmware/mfc_fw.bin
-vendor/firmware/ois_fw_dom.bin
-vendor/firmware/ois_fw_sec.bin
-vendor/firmware/ois_fw_sec_2.bin
+# Seiren Audio Firmware
 vendor/firmware/seiren_fw_dram.bin
 vendor/firmware/seiren_fw_sram.bin
-vendor/firmware/setfile_2p2.bin
-vendor/firmware/setfile_4e6.bin
-vendor/firmware/setfile_6b2.bin
-vendor/firmware/setfile_imx240.bin
+
+# Exynos Media Format Codec firmware - from A810FXXS2CTJ2
+vendor/firmware/mfc_fw.bin
 
 # Cpboot daemon
 bin/cbd:vendor/bin/cbd
