@@ -227,6 +227,7 @@ vendor/lib64/libprotobuf-cpp-full-3.9.1.so|b9613d7b25ffd6ab31f7aa32a904aa6f5f4f9
 
 # Radio - RIL
 vendor/etc/init/init.vendor.rilchip.rc
+vendor/etc/init/init.vendor.rilcommon.rc
 
 # Radio - RIL - from N975FXXU6ETLL
 vendor/bin/hw/rild|c77d17bde3312077a77a3a8238a62e649a996f44
@@ -261,8 +262,7 @@ vendor/lib64/vendor.samsung.hardware.radio@2.1.so|12953d8fe923094410dfa0ea983515
 
 # RIL - from noblerom
 vendor/etc/plmn_delta.bin
-vendor/etc/plmn_delta_attaio.bin
-vendor/etc/plmn_delta_usacdma.bin
-vendor/etc/plmn_delta_usagsm.bin
+vendor/etc/plmn_delta_chn.bin
+vendor/etc/plmn_delta_hktw.bin
 vendor/etc/plmn_se13.bin
 
