@@ -87,14 +87,14 @@ vendor/firmware/seiren_fw_dram.bin
 vendor/firmware/seiren_fw_sram.bin
 
 # Exynos Media Format Codec firmware - from A810FXXS2CTJ2
-vendor/firmware/mfc_fw.bin
+vendor/firmware/mfc_fw.bin|9322abc5a8a5b9a9e1e11f216c95a108cd4289e3
 
 # Cpboot daemon
 bin/cbd:vendor/bin/cbd
 
 # Graphics - taken from A810FXXS2CTJ2
-vendor/lib/egl/libGLES_mali.so
-vendor/lib64/egl/libGLES_mali.so
+vendor/lib/egl/libGLES_mali.so|603f324292c9117945f8e3139c07a769e0361c81
+vendor/lib64/egl/libGLES_mali.so|38a7cd51df2f41f9405a20ce2590afbbb52e1828
 
 # NFC
 etc/nfc/sec_s3fwrn5p_rfreg.bin
@@ -121,8 +121,8 @@ bin/lhd:vendor/bin/hw/lhd
 lib64/hw/gps.default.so:vendor/lib64/hw/gps.default.so
 
 # RIL - secnativefeature
-lib/libsecnativefeature.so:vendor/lib/libsecnativefeature.so
-lib64/libsecnativefeature.so:vendor/lib64/libsecnativefeature.so
+lib/libsecnativefeature.so:vendor/lib/libsecnativefeature.so|268dfdbb80196ac0d16abcce9109f87518753361
+lib64/libsecnativefeature.so:vendor/lib64/libsecnativefeature.so|db918252c537272b99651bee58e6ab017549b623
 
 # Wi-Fi
 etc/wifi/bcmdhd_apsta.bin:vendor/etc/wifi/bcmdhd_apsta.bin
@@ -211,15 +211,15 @@ media/temperature_limit_usb.spi
 media/water_protection_usb.spi
 
 # Gatekeeper - from A810FXXS2CTJ2
-vendor/lib/hw/gatekeeper.exynos7420.so:vendor/lib/hw/gatekeeper.universal7420.so
-vendor/lib64/hw/gatekeeper.exynos7420.so:vendor/lib64/hw/gatekeeper.universal7420.so
+vendor/lib/hw/gatekeeper.exynos7420.so:vendor/lib/hw/gatekeeper.universal7420.so|02459935db12221013f2e49f7afad97a8f7f2cee
+vendor/lib64/hw/gatekeeper.exynos7420.so:vendor/lib64/hw/gatekeeper.universal7420.so|d1885cfd026552d74d32499ba0296b46c5717b7c
 
 # Keymaster - from A810FXXS2CTJ2
-lib64/vendor.samsung.security.skeymaster@3.0.so:vendor/lib64/vendor.samsung.security.skeymaster@3.0.so
-vendor/lib64/libkeymaster_mdfpp.so
-vendor/lib64/libkeymaster_helper.so
-vendor/lib64/libskeymaster.so
-vendor/lib64/hw/keystore.mdfpp.so
+lib64/vendor.samsung.security.skeymaster@3.0.so:vendor/lib64/vendor.samsung.security.skeymaster@3.0.so|62a0ff1aedbddb80eefc348877fc2b4ad606c82c
+vendor/lib64/libkeymaster_mdfpp.so|2c9ec4d35d4d2818d795db3743f0d9e2268983fa
+vendor/lib64/libkeymaster_helper.so|ab1317421c767af084175e329b109ec271b8fe14
+vendor/lib64/libskeymaster.so|aeff074c0906ba0be2ef29889439e9bab09bbc6e
+vendor/lib64/hw/keystore.mdfpp.so|cb585f02672017baf93ae4bd5767d5e2da0330fe
 
 # Protobuf vendor variant - from N975FXXU6ZTK6
 vendor/lib/libprotobuf-cpp-full-3.9.1.so|4290c27525874cb687d072dcfe20244e65685f2a
