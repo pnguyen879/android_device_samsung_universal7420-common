@@ -1,0 +1,3 @@
+# hal_ir_default.te
+allow hal_ir_default sysfs_sensors:dir { open read write search };
+
