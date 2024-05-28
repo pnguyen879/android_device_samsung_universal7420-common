@@ -380,6 +380,9 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal-service.pixel \
     thermal_symlinks
 
+# Update
+PRODUCT_SOONG_NAMESPACES += bootable/deprecated-ota
+
 # USB
 PRODUCT_PACKAGES += \
 	android.hardware.usb@1.3-service.basic
