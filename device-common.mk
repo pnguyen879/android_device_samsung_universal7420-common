@@ -112,6 +112,10 @@ PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
 	$(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
+# BFQ I/O Scheduler
+PRODUCT_PACKAGES += \
+	libbfqio
+
 # Bluetooth
 PRODUCT_PACKAGES += \
 	android.hardware.bluetooth@1.0-impl \
