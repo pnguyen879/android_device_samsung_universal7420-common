@@ -28,6 +28,8 @@ on boot
     chmod 0664 /sys/power/ipa/control_temp
     chown radio system /sys/power/ipa/hotplug_out_threshold
     chmod 0664 /sys/power/ipa/hotplug_out_threshold
+    
+    write /sys/power/cluster0_core_hotplug_in 1
 
     # Change permissions for the CPU governor settings
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
