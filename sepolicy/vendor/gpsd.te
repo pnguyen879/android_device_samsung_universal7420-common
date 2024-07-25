@@ -1,0 +1,19 @@
+# gpsd.te
+
+# Automatically label files created in /data/system/gps as gps_data_file
+file_type_auto_trans(gpsd, system_data_file, gps_data_file)
+
+# audit2allow
+allow gpsd sensorservice_service:service_manager find;
+allow gpsd servicemanager:binder call;
+allow gpsd system_server:unix_stream_socket { read write };
+
+# /data/system/gps
+allow gpsd gps_data_file:dir rw_dir_perms;
+allow gpsd gps_data_file:file create_file_perms;
+allow gpsd gps_data_file:fifo_file create_file_perms;
+
+allow gpsd system_data_file:file { getattr lock open read write };
+allow gpsd system_data_file:fifo_file { open read write create link unlink};
+allow gpsd system_data_file:dir { open read write search };
+allow gpsd system_data_file:dir { add_name remove_name };

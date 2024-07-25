@@ -1,0 +1,2 @@
+# system info
+allow platform_app sysfs_thermal:dir r_dir_perms;

@@ -1,0 +1,7 @@
+# ueventd.te
+
+allow ueventd emmcblk_device:blk_file { create getattr setattr };
+
+allow ueventd self:capability sys_nice;
+
+allow ueventd proc_dt_firmware:dir search;

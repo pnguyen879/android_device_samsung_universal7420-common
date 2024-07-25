@@ -1,0 +1,44 @@
+# hal_sensors_default.te
+
+allow hal_sensors_default iio_device:chr_file r_file_perms;
+allow hal_sensors_default sensor_device:chr_file rw_file_perms;
+
+allow hal_sensors_default {
+    app_efs_file
+    efs_file
+}:dir search;
+
+allow hal_sensors_default {
+    app_efs_file
+    baro_delta_factoryapp_efs_file
+    sensor_factoryapp_efs_file
+    sysfs_batteryinfo
+}:file r_file_perms;
+
+allow hal_sensors_default {
+    sysfs_grip
+    sysfs_hrm
+    sysfs_spi_writeable
+    sysfs_ssp
+    sysfs_sensors
+    sysfs_batteryinfo
+    sysfs_input
+    sysfs_battery
+}:dir r_dir_perms;
+
+allow hal_sensors_default {
+    sysfs_grip
+    sysfs_hrm
+    sysfs_spi_writeable
+    sysfs_ssp
+    sysfs_sensors
+    sysfs_input
+    sysfs_battery
+}:file rw_file_perms;
+
+allow hal_sensors_default {
+    sysfs_grip
+    sysfs_hrm
+    sysfs_iio
+}:lnk_file r_file_perms;
+

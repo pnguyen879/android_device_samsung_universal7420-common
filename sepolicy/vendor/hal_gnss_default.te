@@ -1,0 +1,20 @@
+# hal_gnss_default.te
+
+# Allow gnss to access the gpsd data files
+allow hal_gnss_default {
+    gps_data_file
+    gps_vendor_data_file
+    system_data_file
+}:dir w_dir_perms;
+
+allow hal_gnss_default {
+    gps_data_file
+    gps_vendor_data_file
+    system_data_file
+}:fifo_file create_file_perms;
+
+allow hal_gnss_default system_data_file:dir { open read write add_name link unlink};
+allow hal_gnss_default system_data_file:fifo_file { open read write };
+
+vndbinder_use(hal_gnss_default)
+
