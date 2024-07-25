@@ -141,7 +141,19 @@ PRODUCT_PACKAGES += \
 	libhwc2on1adapter \
 	libhwc2onfbadapter \
 	libion \
-	libion_exynos
+	libion_exynos \
+	libstagefrighthw \
+	libExynosOMX_Core \
+	libExynosOMX_Resourcemanager \
+	libOMX.Exynos.MPEG4.Encoder \
+	libOMX.Exynos.MPEG4.Decoder \
+	libOMX.Exynos.AVC.Encoder \
+	libOMX.Exynos.AVC.Decoder \
+	libOMX.Exynos.HEVC.Encoder\
+ 	libOMX.Exynos.HEVC.Decoder \
+ 	libOMX.Exynos.VP9.Decoder \
+ 	libOMX.Exynos.VP8.Decoder \
+ 	libOMX.Exynos.VP8.Encoder
 
 # Camera
 PRODUCT_PACKAGES += \
