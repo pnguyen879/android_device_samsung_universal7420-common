@@ -141,6 +141,7 @@
             "Path": "/sys/power/ipa/control_temp",
             "Values": [
                 "45",
+                "63",
                 "65",
                 "120"
             ],
