@@ -194,6 +194,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libbauthtzcommon_shim
 
+# FlipFlap
+PRODUCT_PACKAGES += \
+	FlipFlap
+
 # GNSS
 PRODUCT_PACKAGES += \
 	android.hardware.gnss@1.0-impl.universal7420 \
