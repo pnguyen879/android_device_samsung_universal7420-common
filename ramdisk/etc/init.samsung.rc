@@ -68,30 +68,48 @@ on fs
     
     # Set model name by gpio
     setprop ro.product.model ${ro.boot.product.model}
-    
+
+on post-fs
+    # mobicore
+    setprop sys.mobicoredaemon.enable stopped
+	
+	# Samsung ODE >>>
+    mount tmpfs tmpfs /mnt/secure private rec
+    # Samsung ODE <<<
+
+    mount tmpfs tmpfs /mnt/secure/asec shared rec
+	
+	# Bluetooth
+    chown root log /proc/bluetooth/uart/log
+
 on post-fs-data
-	# sec_efs_file
+# [ SEC_SELINUX_PORTING_COMMON
+    # sec_efs_file
     mkdir /efs/sec_efs 0775 radio system
-    
+# ] SEC_SELINUX_PORTING_COMMON
+
     chown system radio /efs
     chmod 0771 /efs
-    
+    restorecon /efs
+
+    # sec_efs_file
+    mkdir /efs/sec_efs 0775 radio system
+
     # mobicore
     mkdir /data/app/mcRegistry 0775 system system
     mkdir /data/app/mcRegistry/TbStorage 0700 system system
     mkdir /efs/TEE  0770 radio system
     
-# ] SEC_SELINUX_PORTING_COMMON
-
-    # We chown/chmod /data again so because mount is run as root + defaults
-    chown system system /data
-    chmod 0771 /data
-    # We restorecon /data in case the userdata partition has been reset.
-    restorecon /data
-    
     # FINGERPRINT - Legacy path
     mkdir /data/biometrics 0770 system system
     restorecon_recursive /data/biometrics
+	
+	# NFC: create data/vendor/nfc for nv storage
+    mkdir /data/vendor/nfc 0770 nfc nfc
+
+    # NFC: create /efs/sec_efs/nfc and /efs/nfc for nv storage
+    mkdir /efs/sec_efs/nfc 0700 nfc nfc
+    mkdir /efs/nfc 0700 nfc nfc
 
     # mobicore
     export MC_AUTH_TOKEN_PATH /efs
@@ -104,20 +122,20 @@ on post-fs-data
     mkdir /efs/prov_data 0770 system system
 	
 # [ SEC_SELINUX_PORTING_COMMON
-        restorecon /efs
-		restorecon /sys/kernel/debug/tracing/trace_marker
+        restorecon --recursive /efs
+		restorecon --recursive /cpefs
+		restorecon --recursive /sys/kernel/debug/tracing/trace_marker
 # ] SEC_SELINUX_PORTING_COMMON
+	
+    # mobicore
+    mkdir /data/vendor/mcRegistry 0775 system system
+    mkdir /data/misc/mcRegistry 0775 system system
 	
 on boot
 
 	# KNOX KAP
     chown system system /dev/knox_kap
     chmod 0660 /dev/knox_kap
-	
-    # permissions for bluetooth.
-    mkdir /efs/bluetooth 0775 radio system
-    chown radio system /efs/bluetooth
-    chmod 0775 /efs/bluetooth
 	
 	# MTP permission
     chmod 0660 /dev/usb_mtp_gadget
@@ -584,7 +602,11 @@ on charger
     write /sys/class/power_supply/battery/batt_update_data "/efs/Battery/battery_data.dat"
     mkdir /efs/lpm 0775 system system
     class_start sec-charger
-	
+
+on property:vold.decrypt=trigger_restart_framework
+    mkdir /data/vendor/mcRegistry 0775 system system
+    mkdir /data/misc/mcRegistry 0775 system system
+
 # LPM
 service charger /system/bin/lpm
     class sec-charger
