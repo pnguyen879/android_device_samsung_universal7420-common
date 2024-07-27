@@ -47,7 +47,11 @@ on init
     
     # Set HW revision (should be ro.revision on note fe)
     setprop ro.boot.hardware.revision ${ro.boot.hw_rev}
-    
+
+on post-fs
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+
 on late-fs
     # Start services for Boot Animation
     start servicemanager
@@ -73,9 +77,6 @@ on post-fs-data
     restorecon --recursive /efs
     restorecon /sys/kernel/debug/tracing/trace_marker
 # ] SEC_SELINUX_PORTING_COMMON
-
-# set RLIMIT_MEMLOCK to 64MB
-    setrlimit 13 40 40
 
 # Permissions for audio
     chown system radio /sys/class/audio/earjack/select_jack
