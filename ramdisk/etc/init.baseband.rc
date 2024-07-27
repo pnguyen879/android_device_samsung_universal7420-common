@@ -81,14 +81,3 @@ on property:ro.multisim.simslotcount=1
 
 on property:ro.multisim.simslotcount=2
     setprop persist.radio.multisim.config dsds
-
-on property:ro.debuggable=1
-	write /sys/kernel/debug/tracing/buffer_size_kb 1408
-	write /sys/kernel/debug/tracing/set_event modem_if:mif_log
-	write /sys/kernel/debug/tracing/tracing_on 1
-
-on property:ro.debug_level=0x494d
-	write /d/tracing/buffer_size_kb 1408
-	write /d/tracing/events/modem_if/mif_log/enable 1
-	write /d/tracing/tracing_on 1
-	write /sys/module/modem_utils/parameters/dflags 13
