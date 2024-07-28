@@ -38,19 +38,9 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_NR_CPUS := 8
 
-# Kernel
-TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-
 # Audio
 TARGET_AUDIOHAL_VARIANT := samsung
 AUDIOSERVER_MULTILIB := 32
-
-# LED
-RED_LED_PATH := "/sys/class/leds/led_r/brightness"
-GREEN_LED_PATH := "/sys/class/leds/led_g/brightness"
-BLUE_LED_PATH := "/sys/class/leds/led_b/brightness"
-BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
 # Bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/configs/bluetooth/libbt_vndcfg.txt
@@ -60,9 +50,6 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
-
-# Recovery
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/ramdisk/etc/fstab.samsungexynos7420
 
 # Display
 TARGET_SCREEN_DENSITY := 560
@@ -74,6 +61,11 @@ ifeq ($(HOST_OS),linux)
     WITH_DEXPREOPT := true
   endif
 endif
+
+# Filesystem
+BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Fingerprint
 TARGET_SEC_FP_CALL_NOTIFY_ON_CANCEL := true
@@ -88,6 +80,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 BOARD_KERNEL_BASE := 0x10000000
 # BOARD_KERNEL_CMDLINE := commandline from boot.img by bootloader
 BOARD_KERNEL_PAGESIZE := 2048
@@ -100,11 +94,7 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_RAMDISK_USE_XZ := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
-BOARD_RAMDISK_USE_XZ := true
-
-# Mediaserver-shim
-TARGET_LD_SHIM_LIBS += \
-    /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
+BOARD_RAMDISK_USE_XZ := true    
 
 # MEMFD
 TARGET_HAS_MEMFD_BACKPORT := true
@@ -115,6 +105,12 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 # Compatibility Matrix
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
 
+# LED
+RED_LED_PATH := "/sys/class/leds/led_r/brightness"
+GREEN_LED_PATH := "/sys/class/leds/led_g/brightness"
+BLUE_LED_PATH := "/sys/class/leds/led_b/brightness"
+BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
+
 # LMKD stats logging
 TARGET_LMKD_STATS_LOG := true
 
@@ -124,6 +120,8 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 29360128
 BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 35651584
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3124019200
+BOARD_ROOT_EXTRA_FOLDERS += efs cpefs
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # Platform
 BOARD_VENDOR := samsung
@@ -137,15 +135,11 @@ BOARD_MODEM_TYPE := ss333
 ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_USES_VND_SECRIL := true
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/ramdisk/etc/fstab.samsungexynos7420
+
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
-
-# Root extra folders
-BOARD_ROOT_EXTRA_FOLDERS += efs cpefs
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
-
-# System prop
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # SECComp filters
 BOARD_SECCOMP_POLICY += $(COMMON_PATH)/seccomp
@@ -157,20 +151,16 @@ include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 SELINUX_IGNORE_NEVERALLOWS := true
 
-# Camera-shims
+# Shims
 TARGET_LD_SHIM_LIBS += \
 	/vendor/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
-	/vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
-
-# Fingerprint-shims
-TARGET_LD_SHIM_LIBS += \
+	/vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so \
 	/vendor/lib/libbauthserver.so|/vendor/lib/libbauthtzcommon_shim.so \
-	/vendor/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so
+	/vendor/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so \
+	/system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
 
-# Use these flags if the board has a ext4 partition larger than 2gb
-BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+# System prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
