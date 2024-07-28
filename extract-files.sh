@@ -72,6 +72,9 @@ BLOB_ROOT="$ANDROID_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 
 "${PATCHELF}" --replace-needed libgui.so libsensor.so $BLOB_ROOT/bin/gpsd
 
+"${PATCHELF}" --remove-needed vendor.samsung.hardware.nfc@1.0.so $BLOB_ROOT/vendor/lib/hw/nfc_nci.default.so
+"${PATCHELF}" --remove-needed vendor.samsung.hardware.nfc@1.0.so $BLOB_ROOT/vendor/lib64/hw/nfc_nci.default.so
+
 # replace SSLv3_client_method with SSLv23_method
 sed -i "s/SSLv3_client_method/SSLv23_method\x00\x00\x00\x00\x00\x00/" $BLOB_ROOT/bin/gpsd
 
