@@ -135,36 +135,6 @@ lib64/hw/gps.default.so:vendor/lib64/hw/gps.universal7420.so
 lib/libsecnativefeature.so:vendor/lib/libsecnativefeature.so
 lib64/libsecnativefeature.so:vendor/lib64/libsecnativefeature.so
 
-# Wi-Fi
-etc/wifi/bcmdhd_apsta.bin:vendor/etc/wifi/bcmdhd_apsta.bin
-etc/wifi/bcmdhd_apsta.bin_a1:vendor/etc/wifi/bcmdhd_apsta.bin_a1
-etc/wifi/bcmdhd_ibss.bin:vendor/etc/wifi/bcmdhd_ibss.bin
-etc/wifi/bcmdhd_ibss.bin_a1:vendor/etc/wifi/bcmdhd_ibss.bin_a1
-etc/wifi/bcmdhd_mfg.bin:vendor/etc/wifi/bcmdhd_mfg.bin
-etc/wifi/bcmdhd_mfg.bin_a1:vendor/etc/wifi/bcmdhd_mfg.bin_a1
-etc/wifi/bcmdhd_sta.bin:vendor/etc/wifi/bcmdhd_sta.bin
-etc/wifi/bcmdhd_sta.bin_a1:vendor/etc/wifi/bcmdhd_sta.bin_a1
-etc/wifi/cred.conf:vendor/etc/wifi/cred.conf
-etc/wifi/nvram_mfg.txt:vendor/etc/wifi/nvram_mfg.txt
-etc/wifi/nvram_mfg.txt_a1:vendor/etc/wifi/nvram_mfg.txt_a1
-etc/wifi/nvram_mfg.txt_b85_a1:vendor/etc/wifi/nvram_mfg.txt_b85_a1
-etc/wifi/nvram_mfg.txt_murata:vendor/etc/wifi/nvram_mfg.txt_murata
-etc/wifi/nvram_mfg.txt_murata_a1:vendor/etc/wifi/nvram_mfg.txt_murata_a1
-etc/wifi/nvram_mfg.txt_murata_b85_a1:vendor/etc/wifi/nvram_mfg.txt_murata_b85_a1
-etc/wifi/nvram_mfg.txt_wisol:vendor/etc/wifi/nvram_mfg.txt_wisol
-etc/wifi/nvram_mfg.txt_wisol_a1:vendor/etc/wifi/nvram_mfg.txt_wisol_a1
-etc/wifi/nvram_mfg.txt_wisol_b85_a1:vendor/etc/wifi/nvram_mfg.txt_wisol_b85_a1
-etc/wifi/nvram_net.txt:vendor/etc/wifi/nvram_net.txt
-etc/wifi/nvram_net.txt_a1:vendor/etc/wifi/nvram_net.txt_a1
-etc/wifi/nvram_net.txt_b85_a1:vendor/etc/wifi/nvram_net.txt_b85_a1
-etc/wifi/nvram_net.txt_murata:vendor/etc/wifi/nvram_net.txt_murata
-etc/wifi/nvram_net.txt_murata_a1:vendor/etc/wifi/nvram_net.txt_murata_a1
-etc/wifi/nvram_net.txt_murata_b85_a1:vendor/etc/wifi/nvram_net.txt_murata_b85_a1
-etc/wifi/nvram_net.txt_wisol:vendor/etc/wifi/nvram_net.txt_wisol
-etc/wifi/nvram_net.txt_wisol_a1:vendor/etc/wifi/nvram_net.txt_wisol_a1
-etc/wifi/nvram_net.txt_wisol_b85_a1:vendor/etc/wifi/nvram_net.txt_wisol_b85_a1
-etc/wifi/wpa_supplicant.conf:vendor/etc/wifi/wpa_supplicant.conf
-
 # AptX - from crosshatch - QP1A.190711.020
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
