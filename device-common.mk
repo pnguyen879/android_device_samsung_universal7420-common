@@ -169,9 +169,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libsuspend
 
-# Debugging
--include $(COMMON_PATH)/system_prop_debug.mk
-
 # DRM
 PRODUCT_PACKAGES += \
 	android.hardware.drm@1.0-impl \
