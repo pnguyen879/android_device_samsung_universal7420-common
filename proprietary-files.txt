@@ -105,10 +105,6 @@ bin/cbd:vendor/bin/cbd
 lib/egl/libGLES_mali.so:vendor/lib/egl/libGLES_mali.so
 lib64/egl/libGLES_mali.so:vendor/lib64/egl/libGLES_mali.so
 
-# IR
-lib/hw/consumerir.exynos5.so:vendor/lib/hw/consumerir.exynos5.so
-lib64/hw/consumerir.exynos5.so:vendor/lib64/hw/consumerir.exynos5.so
-
 # NFC
 etc/nfc/sec_s3fwrn5p_rfreg.bin
 vendor/firmware/nfc/sec_s3fwrn5p_firmware.bin
