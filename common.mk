@@ -377,8 +377,8 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-	android.hardware.thermal-service.samsung \
-	thermal_symlinks.samsung
+    android.hardware.thermal-service.pixel \
+    thermal_symlinks
 
 # USB
 PRODUCT_PACKAGES += \
