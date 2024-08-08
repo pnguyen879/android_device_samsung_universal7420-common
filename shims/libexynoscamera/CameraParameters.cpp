@@ -53,15 +53,6 @@ namespace android
     const char CameraParameters::KEY_RT_HDR[] = "rt-hdr";
 };
 
-/* status_t android::Fence::wait(int timeout); */
-extern "C" int _ZN7android5Fence4waitEi(int timeout);
-
-/* status_t android::Fence::wait(unsigned int timeout); */
-extern "C" int _ZN7android5Fence4waitEj(unsigned int timeout)
-{
-    return _ZN7android5Fence4waitEi(static_cast<int>(timeout));
-}
-
 extern "C" void _ZN7android5FenceD1Ev() { }
 
 extern "C" void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
