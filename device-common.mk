@@ -167,8 +167,7 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-	android.hardware.gatekeeper@1.0-service \
-	android.hardware.gatekeeper@1.0-impl
+	android.hardware.gatekeeper@1.0-service.software
 
 # Health
 PRODUCT_PACKAGES += \
@@ -196,10 +195,8 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-	android.hardware.keymaster@3.0 \
 	android.hardware.keymaster@3.0-impl \
-	android.hardware.keymaster@3.0-service \
-	libkeymaster3device
+	android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
