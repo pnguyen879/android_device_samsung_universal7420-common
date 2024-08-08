@@ -46,3 +46,5 @@ allow init system_server:binder { call transfer };
 allow init vendor_file:file execute_no_trans;
 allow init vndbinder_device:chr_file { ioctl open read write };
 
+# gatekeeper
+allow init hal_gatekeeper_hwservice:hwservice_manager { add find };
