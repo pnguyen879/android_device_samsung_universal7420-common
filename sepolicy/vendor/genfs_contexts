@@ -82,7 +82,9 @@ genfscon sysfs /class/input_booster/tail    u:object_r:sysfs_input:s0
 
 # Input devices
 genfscon sysfs /devices/gpio_keys.30/input/input16                                u:object_r:sysfs_input:s0
+genfscon sysfs /devices/gpio_keys.30/input/input15                                u:object_r:sysfs_input:s0
 genfscon sysfs /devices/gpio_keys.31/input/input16                                u:object_r:sysfs_input:s0
+genfscon sysfs /devices/gpio_keys.31/input/input15                                u:object_r:sysfs_input:s0
 genfscon sysfs /devices/14e10000.hsi2c/i2c-7/7-0049/input                         u:object_r:sysfs_input:s0
 genfscon sysfs /devices/14e10000.hsi2c/i2c-6/6-0049/input                         u:object_r:sysfs_input:s0
 genfscon sysfs /devices/14e10000.hsi2c/i2c-5/5-0049/input                         u:object_r:sysfs_input:s0
@@ -136,6 +138,7 @@ genfscon sysfs /devices/15570000.ufs/host0    u:object_r:sysfs_scsi_host:s0
 # Touchkey
 genfscon sysfs /devices/14e70000.hsi2c/i2c-3/3-0020/input           u:object_r:sysfs_sec_touchkey:s0
 genfscon sysfs /devices/i2c.31/i2c-9/9-0020/input        u:object_r:sysfs_sec_touchkey:s0
+genfscon sysfs /devices/virtual/sec/sec_touchkey      u:object_r:sysfs_sec_touchkey:s0
 
 # Touchscreen
 genfscon sysfs /class/dt2w                                          u:object_r:sysfs_touchscreen_writable:s0
