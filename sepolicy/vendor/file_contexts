@@ -2,7 +2,7 @@
 # Daemons
 #
 
-# /(vendor|system/vendor)/bin/sensorhubservice  u:object_r:sensorhubservice_exec:s0
+/(vendor|system/vendor)/bin/sensorhubservice  u:object_r:sensorhubservice_exec:s0
 /(vendor|system/vendor)/bin/gpsd              u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/lhd               u:object_r:lhd_exec:s0
 /(vendor|system/vendor)/bin/macloader         u:object_r:macloader_exec:s0
@@ -88,6 +88,7 @@
 # HIDL
 #
 
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.service\.universal7420           u:object_r:hal_audio_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.atrace@1\.0-service\.universal7420      u:object_r:hal_atrace_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service\.universal7420        u:object_r:hal_gnss_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.zero            u:object_r:hal_lineage_livedisplay_exynos_exec:s0

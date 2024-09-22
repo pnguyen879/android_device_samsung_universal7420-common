@@ -165,7 +165,6 @@ include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 SELINUX_IGNORE_NEVERALLOWS := true
 
-
 # Shims
 TARGET_LD_SHIM_LIBS += \
 	/vendor/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
