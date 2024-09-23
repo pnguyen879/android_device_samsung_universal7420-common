@@ -356,7 +356,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libstagefright_shim \
 	libexynoscamera_shim \
-	libbauthtzcommon_shim 
+	libbauthtzcommon_shim \
+	sensor_shim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

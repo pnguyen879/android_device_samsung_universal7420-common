@@ -169,7 +169,9 @@ SELINUX_IGNORE_NEVERALLOWS := true
 # Shims
 TARGET_LD_SHIM_LIBS += \
 	/vendor/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
-	/vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
+	/vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so \
+	/vendor/bin/hw/gpsd|sensor_shim.so \
+	/vendor/bin/hw/lhd|sensor_shim.so
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
