@@ -403,19 +403,17 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-	hostapd \
-	libnetcmdiface \
-	libwpa_client \
-	macloader \
-	wificond \
-	wifiloader \
-	wifilogd \
-	wlutil \
-	TetheringConfigOverlay \
-	wpa_supplicant \
-	wpa_supplicant.conf \
-	android.hardware.wifi@1.0-impl \
-	android.hardware.wifi@1.0-service.legacy
+    hostapd \
+    wificond \
+    wifilogd \
+    wlutil \
+    libwpa_client \
+    TetheringConfigOverlay \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    android.hardware.wifi@1.0 \
+    android.hardware.wifi@1.0-impl \
+    android.hardware.wifi@1.0-service
 
 PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/configs/wifi/cred.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/cred.conf \
