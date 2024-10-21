@@ -13,16 +13,12 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
+
 include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := \
-    libbauthtzcommon.c
-
+LOCAL_SRC_FILES := libbauthtzcommon.c
 LOCAL_SHARED_LIBRARIES := liblog
-
 LOCAL_MODULE := libbauthtzcommon_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_VENDOR_MODULE := true
-
 include $(BUILD_SHARED_LIBRARY)

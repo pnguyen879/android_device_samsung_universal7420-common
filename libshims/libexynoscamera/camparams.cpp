@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "CameraParameters.h"
+#include "camparams.h"
 #include <string>
 #include <ui/GraphicBuffer.h>
 
@@ -53,6 +53,7 @@ namespace android
     const char CameraParameters::KEY_RT_HDR[] = "rt-hdr";
 };
 
+//Add back missing symbols
 extern "C" void _ZN7android5FenceD1Ev() { }
 
 extern "C" void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
