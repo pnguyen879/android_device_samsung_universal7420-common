@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-#define LOG_NDEBUG 0
+#define LOG_NDEBUG 1
 #define LOG_PARAMETERS
 
 #define LOG_TAG "CameraWrapper"
+#include <android/fdsan.h>
 #include <cutils/log.h>
 
 #include "CameraWrapper.h"
@@ -39,6 +40,7 @@ static int camera_init();
 
 static int check_vendor_module()
 {
+    android_fdsan_set_error_level(ANDROID_FDSAN_ERROR_LEVEL_DISABLED);
     int rv = 0;
     ALOGV("%s", __FUNCTION__);
 
@@ -123,7 +125,7 @@ static void camera_get_vendor_tag_ops(vendor_tag_ops_t* ops)
     return gVendorModule->get_vendor_tag_ops(ops);
 }
 
-static int camera_open_legacy(const struct hw_module_t* module, const char* id, uint32_t halVersion, struct hw_device_t** device)
+static int camera_open_legacy(const struct hw_module_t* module, const char* id, uint32_t halVersion __unused, struct hw_device_t** device)
 {
     ALOGV("%s", __FUNCTION__);
     if (check_vendor_module())
