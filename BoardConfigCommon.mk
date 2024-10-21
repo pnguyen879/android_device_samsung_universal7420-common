@@ -43,9 +43,9 @@ TARGET_AUDIOHAL_VARIANT := samsung
 AUDIOSERVER_MULTILIB := 32
 
 # Bluetooth
-BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/configs/bluetooth/libbt_vndcfg.txt
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
