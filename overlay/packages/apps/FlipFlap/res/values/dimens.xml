@@ -16,9 +16,11 @@
 -->
 
 <resources>
+
     <!-- Rectangular parameters (config_deviceCoverType == 3) -->
     <dimen name="rectangular_window_top">27.0dip</dimen>
     <dimen name="rectangular_window_left">24.0dip</dimen>
     <dimen name="rectangular_window_width">322.0dip</dimen>
     <dimen name="rectangular_window_height">321.0dip</dimen>
+
 </resources>
